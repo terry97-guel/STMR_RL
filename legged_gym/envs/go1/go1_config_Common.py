@@ -36,8 +36,8 @@ MOTION = "hopturn"
 ROBOT = "go1"
 ROBOT = ROBOT.lower()
 
-friction1 = 0.2
-friction2 = 0.4
+friction1 = 1.2
+friction2 = 1.4
 
 class Cfg( LeggedRobotCfg ):
     class env( LeggedRobotCfg.env ):
@@ -85,6 +85,9 @@ class Cfg( LeggedRobotCfg ):
         mesh_type = 'plane'
         measure_heights = False
         curriculum = False
+        static_friction = 1.0
+        dynamic_friction = 1.0
+        # restitution = 0.
 
     class asset( LeggedRobotCfg.asset ):
         file = f'{LEGGED_GYM_ROOT_DIR}/resources/robots/{ROBOT}/urdf/{ROBOT}.urdf'

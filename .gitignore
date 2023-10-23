@@ -55,6 +55,7 @@ Thumbs.db
 .vscode
 # logs
 logs
+logs_temp
 runs
 
 # other
@@ -64,3 +65,4 @@ image_*.png
 unused/*
 logs_server/*
 *.zip
+

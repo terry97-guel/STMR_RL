@@ -421,6 +421,9 @@ class LeggedRobot(BaseTask):
             
             for s in range(len(props)):
                 props[s].friction = self.friction_coeffs[env_id]
+        else:
+            for s in range(len(props)):
+                props[s].friction = 0.2
         return props
 
     def _process_dof_props(self, props, env_id):
