@@ -120,10 +120,15 @@ def play(args):
 if __name__ == '__main__':
     EXPORT_POLICY = False
     RECORD_FRAMES = True
+    os.environ['CUDA_VISIBLE_DEVICES'] = '0'
     args = get_args()
     args.task = "go1_TMR_AMP"
     args.headless = True
     args.use_gpu_pipeline = False
     args.sim_device='cpu'
     args.rl_device='cpu'
+    from pyvirtualdisplay.smartdisplay import SmartDisplay
+    SCREEN_CAPTURE_RESOLUTION = (1027, 768)
+    virtual_display = SmartDisplay(size=SCREEN_CAPTURE_RESOLUTION)
+    virtual_display.start()
     play(args)

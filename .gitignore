@@ -62,3 +62,5 @@ runs
 __pycache__
 image_*.png
 unused/*
+logs_server/*
+*.zip

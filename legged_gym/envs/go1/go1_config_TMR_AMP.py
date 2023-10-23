@@ -54,6 +54,6 @@ class Cfg( GO1_Cfg ):
 
 class CfgPPO( GO1_CfgPPO ):
     class runner( GO1_CfgPPO.runner ):
-        experiment_name = f"AMP/{MOTION}/{ROBOT}/{MR}/{MOTION}_{ROBOT}_{MR}"
+        # experiment_name = f"AMP/{MOTION}/{ROBOT}/{MR}/{MOTION}_{ROBOT}_{MR}"
         amp_motion_files = MOTION_FILES
 

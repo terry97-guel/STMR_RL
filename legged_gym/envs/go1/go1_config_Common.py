@@ -36,6 +36,9 @@ MOTION = "hopturn"
 ROBOT = "go1"
 ROBOT = ROBOT.lower()
 
+friction1 = 0.2
+friction2 = 0.4
+
 class Cfg( LeggedRobotCfg ):
     class env( LeggedRobotCfg.env ):
         num_envs = 5480
@@ -94,8 +97,9 @@ class Cfg( LeggedRobotCfg ):
         flip_visual_attachments = False
         
     class domain_rand:
-        randomize_friction = False
-        friction_range = [0.25, 1.75]
+        test_time = False
+        randomize_friction = True
+        friction_range = [friction1, friction2]
         randomize_base_mass = False
         added_mass_range = [-1., 1.]
         push_robots = True
@@ -171,7 +175,7 @@ class CfgPPO( LeggedRobotCfgPPO ):
 
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = ''
-        # experiment_name = f"AMP/{MOTION}/{ROBOT}/{MR}/{MOTION}_{ROBOT}_{MR}"
+        experiment_name = f"AMP/{MOTION}/{ROBOT}/TMR/{MOTION}_{ROBOT}_TMR_{friction1}_{friction2}"
         algorithm_class_name = 'AMPPPO'
         policy_class_name = 'ActorCritic'
         max_iterations = 50_000 # number of policy updates
