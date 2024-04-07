@@ -39,7 +39,7 @@ import numpy as np
 import torch
 
 from isaacgym import gymtorch, gymapi, gymutil
-NO_RAND = True
+NO_RAND = False
 
 def play(args):
     register_tasks(args.task, args.seed, NO_RAND=NO_RAND)
