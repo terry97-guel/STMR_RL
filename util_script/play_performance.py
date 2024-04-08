@@ -1,5 +1,5 @@
 # %%
-NO_RAND = True
+NO_RAND = False
 
 GET_ALL = False
 fps = 30
@@ -217,12 +217,14 @@ def main(MR, seed, ROBOT, MOTION):
     plt.plot(key_point_error_ls)
     viewer.close()
 
-# MR = "STMR"
-seed = 1
-# MOTION = 'sidesteps'
+seed = 2
+MR = "STMR"
+MOTION = 'videowalk0'
+ROBOT = 'go1'
+main(MR, seed, ROBOT, MOTION)
 
-for MOTION in ["trot1"]:
-    for MR in ["NMR", "STMR", "AMP", "TO"]:
-        for ROBOT in ['go1', "a1", 'al']:
-            main(MR, seed, ROBOT, MOTION)
+# for MOTION in ["trot1"]:
+#     for MR in ["NMR", "STMR", "AMP", "TO"]:
+#         for ROBOT in ['go1', "a1", 'al']:
+#             main(MR, seed, ROBOT, MOTION)
 # %%
